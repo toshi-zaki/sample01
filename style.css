@@ -103,7 +103,7 @@ html{
 /* -----------ã‚­ãƒ¼ãƒ´ã‚£ã‚¸ãƒ¥ã‚¢ãƒ«---------- */
 
 .main-kv{
-    background-image:url(kv.jpg);
+    background-image:url(https://github.com/toshi-zaki/sample01/blob/master/kv.jpg?raw=true);
     width:100%;
     height:100vh;
     background-position:center right;
@@ -220,7 +220,7 @@ html{
     width:60%;
 }
 .application-image-bg{
-    background-image: url(../../assets/images/main_02.jpg);
+    background-image: url(https://github.com/toshi-zaki/sample01/blob/master/main_02.jpg?raw=true);
     background-position:center center;
     width:100%;
     height:600px;
@@ -260,7 +260,7 @@ html{
 }
 
 .gallery-container{
-    background-image:url(../../assets/images/main_03.jpg);
+    background-image:url(https://github.com/toshi-zaki/sample01/blob/master/main_03.jpg?raw=true);
     background-repeat:no-repeat;
     background-position:center right;
     background-size:cover;
