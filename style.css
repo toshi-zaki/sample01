@@ -42,7 +42,7 @@ table {
 * {
     box-sizing: border-box;
 }
-/* -----ã“ã“ã‹ã‚‰ä¸‹ã«è¨˜è¿°ã—ã¦ãã ã•ã„----- */
+/* -----ここから下に記述してください----- */
 
 html{
     font-size:20px;
@@ -53,13 +53,14 @@ html{
     background:rgba(000, 000, 000, .3);
     position:fixed;
     z-index:1000;
+    padding:30px;
 }
 
 .header-container{
     display:flex;
     flex-wrap:wrap;
     justify-content:space-between;
-    padding:30px 20px;
+
     color:white;
     align-items:center;
 }
@@ -100,10 +101,15 @@ html{
     width:100%;
 }
 
-/* -----------ã‚­ãƒ¼ãƒ´ã‚£ã‚¸ãƒ¥ã‚¢ãƒ«---------- */
+.header-container input,
+.header-container label{
+    display:none;
+}
+
+/* -----------キーヴィジュアル---------- */
 
 .main-kv{
-    background-image:url(https://github.com/toshi-zaki/sample01/blob/master/kv.jpg?raw=true);
+    background-image:url(../../assets/images/kv.jpg);
     width:100%;
     height:100vh;
     background-position:center right;
@@ -134,7 +140,7 @@ html{
     }
 }
 
-/*  ----------ã‚³ãƒ³ã‚»ãƒ—ãƒˆã‚»ã‚¯ã‚·ãƒ§ãƒ³------- */
+/*  ----------コンセプトセクション------- */
 
 .contents{
     width:100%;
@@ -207,7 +213,7 @@ html{
 }
 
 
-/* ------------ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³------------ */
+/* ------------アプリケーション------------ */
 
 .application-container{
     width:100%;
@@ -220,7 +226,7 @@ html{
     width:60%;
 }
 .application-image-bg{
-    background-image: url(https://github.com/toshi-zaki/sample01/blob/master/main_02.jpg?raw=true);
+    background-image: url(../../assets/images/main_02.jpg);
     background-position:center center;
     width:100%;
     height:600px;
@@ -253,14 +259,14 @@ html{
     bottom:-100px;
 }
 
-/* --------------ã‚®ãƒ£ãƒ©ãƒªãƒ¼----------- */
+/* --------------ギャラリー----------- */
 
 .gallery .contents-title{
     padding-top:80px;
 }
 
 .gallery-container{
-    background-image:url(https://github.com/toshi-zaki/sample01/blob/master/main_03.jpg?raw=true);
+    background-image:url(../../assets/images/main_03.jpg);
     background-repeat:no-repeat;
     background-position:center right;
     background-size:cover;
@@ -287,7 +293,7 @@ html{
     padding-top:80px;
 }
 
-/* ----------------ã‚«ãƒ¼ãƒ‰------------- */
+/* ----------------カード------------- */
 
 .card-container{
     width:100%;
@@ -318,4 +324,198 @@ html{
 }
 .card-list p{
     font-size:1rem;
+}
+
+/* ------------レスポンシブ----------- */
+
+@media screen and (max-width:768px){
+    html{
+        font-size:16px;
+    }
+
+    /* ヘッダー */
+    .header{
+        padding:10px;
+    }
+    .header-left h2{
+        font-size:1.2rem;
+    }
+    .header-container input,
+    .header-container label{
+        display:block;
+    }
+    .header-container input{
+        display:none;
+    }
+    .header-container label{
+        position:absolute;
+        right:10px;
+        clear:both;
+    }
+    span.hamburger__icon{
+        display:inline-block;
+        width:35px;
+        height:25px;
+    }
+    span.hamburger__icon i{
+        position: absolute;
+        width:100%;
+        height:2px;
+        background:#fff;
+        display:block;
+        transition:all .3s ease-in-out;
+    }
+    span.hamburger__icon i:nth-child(1){
+        top:0;
+    }
+    span.hamburger__icon i:nth-child(2){
+        margin:auto;
+        top:0;
+        bottom:0;
+    }
+    span.hamburger__icon i:nth-child(3){
+        bottom:0;
+    }
+    .header-container input:checked + label span.hamburger__icon i:nth-child(1){
+        margin:auto;
+        transform:rotate(45deg);
+        right:0;
+        bottom:0;
+        left:0;
+        top:0;
+    }
+    .header-container input:checked + label span.hamburger__icon i:nth-child(2){
+        transform:rotateX(90deg);
+        top:0;
+        bottom:0;
+    }
+    .header-container input:checked + label span.hamburger__icon i:nth-child(3){
+        margin:auto;
+        transform: rotate(-45deg);
+        top:0;
+        right:0;
+        bottom:0;
+    }
+    .header-container input:checked ~ .header-navi{
+        z-index:99;
+        opacity:1;
+        transform:translateX(0);
+    }
+    .header-navi{
+        position:fixed;
+        opacity:0;
+        background-color:rgba(255, 255, 255, 0.7);
+        top:50px;
+        right:0;
+        transform: translateX(100%);
+        bottom:0;
+        left:0;
+        z-index: -1;
+        transition: all 1s ease-out;
+    }
+    .header-right{
+        width:100%;
+        background-color: #fff;
+        position: absolute;
+        right: 0;
+        top: 0px;
+        bottom: 0;
+        transition-duration: 1s;
+        transition-property: right;
+        overflow-y: scroll;
+    }
+    .header-container input:checked ~ .header-navi .header-right{
+        right:0;
+    }
+    .header-list{
+        margin:0;
+        display:block;
+        justify-content: inherit;
+    }
+    .header-list li{
+        border-bottom:1px solid #000;
+    }
+    .header-list li a{
+        padding:0 50px;
+        color:#000;
+        font-size:24px;
+        height:100px;
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+        justify-content: center;
+        font-weight:700;
+        line-height:1;
+        transition: .3s ease-in-out;
+    }
+
+    .main-kv{
+        height:100vh;
+        background-position:center right -200px;
+    }
+    .main-kv h1{
+        width:100%;
+        text-align:center;
+        font-size:2.6rem;
+    }
+
+   
+
+    /* コンセプト */ 
+    .concept-image{
+        width:100%;
+        margin-bottom:40px;
+    }
+    .concept-text{
+        width:100%;
+        padding:20px;
+    }
+/* アプリケーション */
+  .application-image{
+      width:100%;
+      
+  }
+  .application-text{
+      width:100%;
+      padding:30px 40px;
+      background-color: #f4f4f4;
+      margin:auto;
+  }
+   .application-text .contents-sub-title{
+       text-align:center;
+   }
+   .application-text::before{
+       content:none;
+   }
+   .application{
+    margin-bottom:60px;
+   }
+
+   /* ギャラリー */
+   .gallery-container{
+       width:auto;
+       height:calc(100% - 60px);
+   }
+   .gallery-text{
+       padding:30px 20px;
+   }
+   .gallery-container .contents-sub-title{
+       padding-top:20px;
+   }
+    
+   /* カード */
+
+   .card-container{
+       width:100%;
+   }
+   .card-list{
+       display:block;
+   }
+   .card-list li{
+       width:100%;
+       padding-right:0;
+   }
+   .card-list li img{
+       width:100%;
+   }
 }
