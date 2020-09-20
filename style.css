@@ -1,1 +1,321 @@
+/* resetCSS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+* {
+    box-sizing: border-box;
+}
+/* -----ã“ã“ã‹ã‚‰ä¸‹ã«è¨˜è¿°ã—ã¦ãã ã•ã„----- */
 
+html{
+    font-size:20px;
+}
+
+.header{
+    width:100%;
+    background:rgba(000, 000, 000, .3);
+    position:fixed;
+    z-index:1000;
+}
+
+.header-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    padding:30px 20px;
+    color:white;
+    align-items:center;
+}
+
+.header-left{
+    font-family:cursive;
+    font-size:1.5rem;
+    padding:0 20px;
+}
+
+.header-list{
+    display:flex;
+}
+
+.header-list li{
+    margin-right:24px;
+    padding-right:12px;
+}
+.header-list li a{
+    text-decoration:none;
+    color:white;
+    position:relative;
+}
+.header-list li a::after{
+    content:"";
+    width:0;
+    height:1px;
+    background:white;
+    position:absolute;
+    bottom:-8px;
+    left:50%;
+    transform:translatex(-50%);
+    transition:all .4s;
+}
+
+.header-list li a:hover::after{
+    content:"";
+    width:100%;
+}
+
+/* -----------ã‚­ãƒ¼ãƒ´ã‚£ã‚¸ãƒ¥ã‚¢ãƒ«---------- */
+
+.main-kv{
+    background-image:url(../../assets/images/kv.jpg);
+    width:100%;
+    height:100vh;
+    background-position:center right;
+    object-fit:cover;
+    position:relative;
+    margin-bottom:120px;
+}
+.main-kv h1{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    color:white;
+    font-size:3.8rem;
+    font-weight:bold;
+    font-family:fantasy;
+    text-shadow:black 15px 15px;
+    opacity:0;
+    animation: fadeIn 4s ease;
+    animation-fill-mode: both;
+}
+@keyframes fadeIn{
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+
+/*  ----------ã‚³ãƒ³ã‚»ãƒ—ãƒˆã‚»ã‚¯ã‚·ãƒ§ãƒ³------- */
+
+.contents{
+    width:100%;
+    margin-bottom:160px;
+}
+.contents-title{
+    font-size:2rem;
+    color:black;
+    text-align:center;
+    font-family:fantasy;
+    margin-bottom:80px;   
+    position:relative;
+    font-weight:bold;
+}
+.contents-title::after{
+    content:"";
+    width:40px;
+    height:2px;
+    background:black;
+    position:absolute;
+    bottom:-4px;
+    left:50%;
+    transform:translatex(-50%);
+}
+.contents-container{
+    width:100%;
+    max-width:1080px;
+    margin:auto;
+}
+
+.concept-container{
+    width:100%;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+}
+
+.concept-image{
+    width:calc(50% - 40px);
+}
+.concept-image img{
+    width:100%;
+}
+.concept-text{
+    width:calc(50% - 40px);
+    overflow-y: auto;
+    height:630px;
+}
+.contents-sub-title{
+    font-weight:bold;
+    text-align:center;
+    margin-bottom:20px;
+    width:100%;
+    font-size:1.3rem;
+}
+.contents-sub-title::before,
+.contents-sub-title::after{
+    content:"";
+    width:30px;
+    height:2px;
+    background:black;
+    display:inline-block;
+    vertical-align:5px;
+}
+.contents-sub-title::before{
+    margin-right:8px;
+}
+.contents-sub-title::after{
+    margin-left:8px;
+}
+
+
+/* ------------ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³------------ */
+
+.application-container{
+    width:100%;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:flex-end;
+    justify-content: space-between;
+}
+.application-image{
+    width:60%;
+}
+.application-image-bg{
+    background-image: url(../../assets/images/main_02.jpg);
+    background-position:center center;
+    width:100%;
+    height:600px;
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+.application-text{
+    width:calc(40% - 30px);
+    font-size:.9rem;
+    line-height:2rem;
+    padding:20px;
+    position:relative;
+}
+.application-text span{
+    font-weight:bold;
+    font-size:1.3rem;
+}
+.application-text .contents-sub-title{
+    text-align:left;
+}
+
+.application-text::before{
+    content:"";
+    width:calc(100% + 200px);
+    height:calc(100% + 200px);
+    background:rgba(193, 193, 193,.2);
+    position:absolute;
+    z-index:-1;
+    right:0;
+    bottom:-100px;
+}
+
+/* --------------ã‚®ãƒ£ãƒ©ãƒªãƒ¼----------- */
+
+.gallery .contents-title{
+    padding-top:80px;
+}
+
+.gallery-container{
+    background-image:url(../../assets/images/main_03.jpg);
+    background-repeat:no-repeat;
+    background-position:center right;
+    background-size:cover;
+    width:100%;
+    height:400px;
+    
+}
+.gallery-mask{
+    background:rgba(255, 255, 255, .6);
+    height:100%;
+    width:100%;
+}
+
+.gallery-text{
+    width:70%;
+    margin:auto;
+    font-weight:bold;
+    word-break:break-all;
+    line-height:2rem;
+    font-size:1rem;
+}
+
+.gallery-text .contents-sub-title{
+    padding-top:80px;
+}
+
+/* ----------------ã‚«ãƒ¼ãƒ‰------------- */
+
+.card-container{
+    width:100%;
+    max-width:1280px;
+    margin:auto;
+}
+
+.card-list{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+}
+.card-list h3{
+    margin-bottom:12px;
+    font-size:1.1rem;
+}
+
+.card-list li{
+    width:calc(30% + 15px);
+    margin-bottom:50px;
+}
+.card-list li img{
+    width:100%;
+    height:600px;
+    object-fit:cover;
+    border:2px solid;
+    padding:4px;
+}
+.card-list p{
+    font-size:1rem;
+}
