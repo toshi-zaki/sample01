@@ -326,7 +326,7 @@ html{
     font-size:1rem;
 }
 
-/*^^^^^^^^^^^^^^ コンタクトフォーム ------------*/
+/*------------- コンタクトフォーム ------------*/
 
 .contact-container{
     width:100%;
@@ -576,4 +576,8 @@ footer p{
    .card-list li img{
        width:100%;
    }
+    
+/*   コンタクトフォーム   */
+    .contact-container{
+        width:100%;
 }
