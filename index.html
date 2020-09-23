@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width">
 
     <!-- cssへのリンク -->
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 </head>
 
 <body>
@@ -54,7 +54,7 @@
      <div class="contents-container">
        <div class="concept-container">
          <div class="concept-image">
-          <img src="main_01.jpg" alt="">
+          <img src="././assets/images/main_01.jpg" alt="">
          </div>
          <div class="concept-text"> 
           <h2 class="contents-sub-title">Fashionable girl</h2>
@@ -139,7 +139,7 @@
          <ul class="card-list">
            <li>
              <h3>Beautiful dance</h3>
-              <img src="https://github.com/toshi-zaki/sample01/blob/master/card_01.jpg?raw=true" alt="">
+              <img src="././assets/images/card_01.jpg" alt="">
               <p>The description of the card goes here.
 
                 Again, here is the description of the card
@@ -151,7 +151,7 @@
 
            <li>
              <h3>Beautiful dance</h3>
-              <img src="https://github.com/toshi-zaki/sample01/blob/master/card_02.jpg?raw=true" alt="">
+              <img src="././assets/images/card_02.jpg" alt="">
               <p>The description of the card goes here.
 
                 Again, here is the description of the card
@@ -163,7 +163,7 @@
 
            <li>
              <h3>Blue candy</h3>
-              <img src="https://github.com/toshi-zaki/sample01/blob/master/card_03.jpg?raw=true" alt="">
+              <img src="././assets/images/card_03.jpg" alt="">
               <p>The description of the card goes here.
 
                 Again, here is the description of the card
@@ -175,7 +175,7 @@
 
            <li>
              <h3>Beautiful witch</h3>
-              <img src="https://github.com/toshi-zaki/sample01/blob/master/card_04.jpg?raw=true" alt="">
+              <img src="././assets/images/card_04.jpg" alt="">
               <p>The description of the card goes here.
 
                 Again, here is the description of the card
@@ -187,7 +187,7 @@
 
            <li>
              <h3>City never sleeps</h3>
-              <img src="https://github.com/toshi-zaki/sample01/blob/master/card_05.jpg?raw=true" alt="">
+              <img src="././assets/images/card_05.jpg" alt="">
               <p>The description of the card goes here.
 
                 Again, here is the description of the card
@@ -199,7 +199,7 @@
 
            <li>
              <h3>Where is mom</h3>
-              <img src="https://github.com/toshi-zaki/sample01/blob/master/card_06.jpg?raw=true" alt="">
+              <img src="././assets/images/card_06.jpg" alt="">
               <p>The description of the card goes here.
 
                 Again, here is the description of the card
@@ -216,12 +216,78 @@
 
    </section>
 
+  <!----------------- コンタクトフォーム ------------->
+
+  <section class="contents contact">
+    <h1 class="contents-title" id="contact">Contact</h1>
+
+     <div class="contact-container">
+      <dl class="contact-form">
+
+        <dt class="contact-title">氏名</dt>
+        <dd>
+          <input type="text" placeholder="（例）忍者　太郎">
+        </dd>
+
+        <dt class="contact-title">住所</dt>
+        <dd>
+          <input type="text" placeholder="（例）東京都○○">
+        </dd>
+
+        <dt class="contact-title">電話</dt>
+        <dd>
+          <input type="text" placeholder="（例）090-1234-5678">
+        </dd>
+
+        <dt>お問い合わせ</dt>
+        <dd>
+          <textarea name="textarea"  cols="30" rows="10" placeholder="（例）お問い合わせ"></textarea>
+        </dd>
+      </dl>
+
+      <button type="submit" class="contact-btn" >submit</button>
+
+     </div>
+
+  </section>
+
+
     <!-- scriptエリア -->
     <!-- jquery cdn読み込み -->
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+ <script>
+    $(function(){
+      // スムーススクロール
+      let runScroll = function(){
+      $('a[href^="#"]').click(function(){
+        var speed = 500;
+        var href= $(this).attr("href");
+        var target = $(href == "#" || href == "" ? 'html' : href);
+        var position = target.offset().top;
 
+        $("html, body").animate({scrollTop:position}, speed, "swing");
+        return false;
+      });
+    };
 
-   
+    let unlockCheckBox = function(){
+      let $trigger = $('.header-list li a'); // ←ヘッダーリストのクラス名
+      let $target = $('input[type="checkbox"]');
+
+      $trigger.click(function(){
+        $target.prop('checked', false);
+      });
+    };
+
+    runScroll();
+    unlockCheckBox();
+    });
+  </script>
+
+   <footer>
+     <p>©️ninjacode.inc.jp</p>
+   </footer>
+
 
 </body>
 
